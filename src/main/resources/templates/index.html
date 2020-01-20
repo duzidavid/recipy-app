@@ -6,5 +6,20 @@
 </head>
 <body>
     <h1 th:text="'My Recipes!!!'">My recipes...</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Directions</th>
+        </tr>
+        <tr th:each="recipe : ${recipes}">
+            <td th:text="${recipe.id}">123</td>
+            <td th:text="${recipe.description}">Tasty Goodnees</td>
+            <td th:text="${recipe.directions}">3 Add salt, lime juice, and the rest: Sprinkle with salt and lime (or lemon) juice. The acid in the lime juice will provide some balance to the richness of the avocado and will help delay the avocados from turning brown.
+
+                Add the chopped onion, cilantro, black pepper, and chiles. Chili peppers vary individually in their hotness. So, start with a half of one chili pepper and add to the guacamole to your desired degree of hotness.</td>
+        </tr>
+    </table>
 </body>
 </html>
