@@ -68,4 +68,12 @@ public class RecipeServiceImplTest {
     public void findByIdNoId() {
         recipeService.findById(12L);
     }
+
+    @Test
+    public void deleteById() {
+        //given, when
+        recipeService.deleteById(2L);
+        //then
+        verify(recipeRepository, times(1)).deleteById(anyLong());
+    }
 }
