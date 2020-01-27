@@ -1,5 +1,7 @@
 package cz.duzi.recipeapp.services;
 
+import cz.duzi.recipeapp.converters.RecipeCommandToRecipe;
+import cz.duzi.recipeapp.converters.RecipeToRecipeCommand;
 import cz.duzi.recipeapp.domain.Recipe;
 import cz.duzi.recipeapp.repositories.RecipeRepository;
 import org.junit.Before;
@@ -18,6 +20,8 @@ import static org.mockito.Mockito.*;
 public class RecipeServiceImplTest {
 
     RecipeService recipeService;
+    RecipeCommandToRecipe recipeCommandToRecipe;
+    RecipeToRecipeCommand recipeToRecipeCommand;
 
     @Mock
     RecipeRepository recipeRepository;
@@ -26,7 +30,7 @@ public class RecipeServiceImplTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
 
     }
 
