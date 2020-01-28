@@ -1,6 +1,5 @@
 package cz.duzi.recipeapp.converters;
 
-import cz.duzi.recipeapp.commands.UnitOfMeasureCommand;
 import cz.duzi.recipeapp.domain.UnitOfMeasure;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,7 +38,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
         uom.setId(LONG_VALUE);
         uom.setDescription(DESCRIPTION);
         //when
-        UnitOfMeasureCommand uomc = converter.convert(uom);
+        cz.duzi.recipeapp.commands.UnitOfMeasureCommand uomc = converter.convert(uom);
 
         //then
         assertEquals(LONG_VALUE, uomc.getId());

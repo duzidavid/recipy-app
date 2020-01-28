@@ -1,6 +1,5 @@
 package cz.duzi.recipeapp.converters;
 
-import cz.duzi.recipeapp.commands.UnitOfMeasureCommand;
 import cz.duzi.recipeapp.domain.UnitOfMeasure;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,13 +26,13 @@ public class UnitOfMeasureCommandToUnitOfMeasureTest {
 
     @Test
     public void testEmptyObject() throws Exception {
-        assertNotNull(converter.convert(new UnitOfMeasureCommand()));
+        assertNotNull(converter.convert(new cz.duzi.recipeapp.commands.UnitOfMeasureCommand()));
     }
 
     @Test
     public void convert() throws Exception {
         //given
-        UnitOfMeasureCommand command = new UnitOfMeasureCommand();
+        cz.duzi.recipeapp.commands.UnitOfMeasureCommand command = new cz.duzi.recipeapp.commands.UnitOfMeasureCommand();
         command.setId(LONG_VALUE);
         command.setDescription(DESCRIPTION);
 
